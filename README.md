@@ -48,7 +48,7 @@ torch.backends.cudnn.benchmark = True
 7. AdaptiveMixedPrecision или утилизация тензорных ядер
 AdaptiveMixedPrecision позволяет выполнять часть операций в 16bit.
 Самый эффективный рецепт улучшения.
-Проверяй что тренировка не взрывается. Встречал проблемы с CTC лоссом.
+Проверяй что тренировка не взрывается. Внимательно читай документацию, особенно если используешь несколько лосс-функций или занимаешься любмым другим нетривиальным колдунством.
 
 8. Apex
 [Apex](https://nvidia.github.io/apex/index.html) - расширение для PyTorch от NVidia.
@@ -65,5 +65,12 @@ AdaptiveMixedPrecision позволяет выполнять часть опер
 Важно понимать, что такое изменение может изменить ход обучения. Подробнее в [документации](https://pytorch.org/docs/stable/generated/torch.optim.Optimizer.zero_grad.html#torch-optim-optimizer-zero-grad)
 
 11. Гайды по тюнингу производительности
+- [PyTorch performance tuning guide](https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html)
+- [Lightning Speed Up Model Training](https://pytorch-lightning.readthedocs.io/en/stable/guides/speed.html#set-grads-to-none)
+- [Lightning Effective Training Techiques](https://pytorch-lightning.readthedocs.io/en/stable/advanced/training_tricks.html)
+- [Huggingface Effective Training On Single GPU](https://huggingface.co/docs/transformers/perf_train_gpu_one)
+- [NVIDIA A100 Application Performance Guide](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/v100-application-performance-guide.pdf)
+- [NVIDIA Typical Tile Dimensions In cuBLAS And Performance](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/v100-application-performance-guide.pdf)
+- [HSE/YSDA Effective DL](https://github.com/mryab/efficient-dl-systems/tree/main/)
 
 12. Используй оффициальный докер образ NVidia
